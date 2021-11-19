@@ -1,0 +1,82 @@
+<style>
+    .search-container{
+        width: 500px;
+        /* background-color: rgb(224, 223, 223);
+        border-radius: 7px;
+        -webkit-box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+        box-shadow: 0px 8px 20px rgb(0 0 0 / 6%); */
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .result-container{
+        width: 500px;
+        background-color: rgb(224, 223, 223);
+        border-radius: 7px;
+        -webkit-box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+        box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+    }
+    .result-container .technology-container{
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        border-bottom: 2px solid black;
+        color: grey;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    .result-container .info-container{
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+
+<div style="display: flex; justify-content: center; width: 100%;">
+    <div>
+        <div class="search-container">
+            <article ng-include = "'include/partials/buscador.html'"></article>
+        </div>
+        <div ng-if="vm.search.status == 'registro_encontrado'" class="result-container">
+    
+            <div class="technology-container">
+                Tecnología {{vm.search.resultado.CLASE_SERVICIO}}
+            </div>
+            <div class="info-container">
+                <table>
+                    <tr>
+                        <td><b>Nombre:</b></td>
+                        <td>{{vm.search.resultado.NOMBRE_CLIENTE}} {{vm.search.resultado.APELLIDO_CLIENTE}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>DNI:</b></td>
+                        <td>{{vm.search.resultado.NUMERO_IDENTIFICACION}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Modelo:</b></td>
+                        <td>{{vm.search.resultado.MODELO}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Velocidad:</b></td>
+                        <td>{{vm.search.resultado.VELOCIDAD}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Línea:</b></td>
+                        <td>{{vm.search.resultado.LINEA}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>ID Suscripción:</b></td>
+                        <td>{{vm.search.resultado.ID_SUSCRIPCION}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Dirección:</b></td>
+                        <td>{{vm.search.resultado.DIRECCION_COMPLETA}} - {{vm.search.resultado.SUB_REGION}}</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>

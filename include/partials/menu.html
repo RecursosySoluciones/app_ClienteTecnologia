@@ -1,0 +1,101 @@
+<style>
+  .main-menu{
+    background-color: grey;
+    height:59px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border: 1px solid grey;
+    -webkit-box-shadow: 0px 10px 26px -7px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 10px 26px -7px rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 26px -7px rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .main-menu .links{
+    display: flex;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-menu .links li{
+    margin-right: 30px;
+    color: white;
+    cursor: pointer;
+    font-family: "robotoLight";
+  }
+
+  .main-menu .links li:hover{
+    color:#FCBF41;
+  }
+
+  .main-menu .links li a{
+    text-decoration: none;
+    color: white;
+  }
+  .main-menu .links li a:hover{
+    color:#FCBF41;
+  }
+  .hamburger-container{
+    display: none;
+  }
+
+  .brand-container{
+    background-color:#313131;
+    _background-color:#437c98;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 33px;
+    color: white;
+    border-radius: 0 0 17px 0;
+    font-family: "robotoMedium";
+    font-size: 25px;  
+  }
+
+
+
+  @media only screen and (max-width: 768px) {
+    .hamburger-container{
+      display: initial;
+      _background-color:#FCBF41;
+      height: 59px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 17px 0 0;
+      border-radius: 17px 0 0 17px;
+      cursor: pointer;
+    }
+
+    .brand-container{
+      padding: 0 20px;
+      font-size: 21px;
+    }
+
+    .main-menu .links{
+      display: none;
+    }
+
+  }
+</style>
+
+<div class="main-menu">
+  <a href="#" style="text-decoration: none; cursor: pointer">
+    <div class="brand-container">
+      Cliente / Tecnología
+    </div>
+  </a>
+
+  <div style="display: flex; align-items: center;">
+
+  </div>
+  <div class="hamburger-container" onclick="openNav()">
+    <img src="img/icons/bars.svg" width="20px" alt="">
+  </div>
+  
+</div>

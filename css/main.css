@@ -1,0 +1,276 @@
+/* FONTS - START */
+  @font-face {
+    font-family: "robotoBlack";
+    src: url("fonts/Roboto-Black.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoBlackItalic";
+    src: url("fonts/Roboto-BlackItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoBold";
+    src: url("fonts/Roboto-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoBoldItalic";
+    src: url("fonts/Roboto-BoldItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoItalic";
+    src: url("fonts/Roboto-Italic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoLight";
+    src: url("fonts/Roboto-Light.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoLightItalic";
+    src: url("fonts/Roboto-LightItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoMedium";
+    src: url("fonts/Roboto-Medium.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoMediumItalic";
+    src: url("fonts/Roboto-MediumItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoRegular";
+    src: url("fonts/Roboto-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoRegular";
+    src: url("fonts/Roboto-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoThin";
+    src: url("fonts/Roboto-Thin.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoThinItalic";
+    src: url("fonts/Roboto-ThinItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoCondensedBold";
+    src: url("fonts/RobotoCondensed-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoCondensedBoldItalic";
+    src: url("fonts/RobotoCondensed-BoldItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoCondensedItalic";
+    src: url("fonts/RobotoCondensed-Italic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoCondensedLight";
+    src: url("fonts/RobotoCondensed-Light.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoCondensedLightItalic";
+    src: url("fonts/RobotoCondensed-LightItalic.ttf");
+  }
+
+  @font-face {
+    font-family: "robotoCondensedRegular";
+    src: url("fonts/RobotoCondensed-Regular.ttf");
+  }
+
+/* FONTS - END */
+
+/* LOADING SPINNER - START */
+  .lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+/* LOADING SPINNER - END */
+
+/* GENERAL ELEMENTS - START */
+
+  html {
+    font-size: 15px;
+    font-family: "robotoRegular";
+  }
+
+  hr {
+    opacity: 1 !important;
+  }
+
+  body {
+    color: #707070;
+    background-color: #F5F5F5;
+    position: relative;
+  }
+
+  h2{
+    margin-top:50px;
+    margin-bottom:10px;
+    text-align: center;
+    width: 100%;
+    color: #313131;
+    font-family: "robotoLight";
+  }
+  h3{
+    margin-top:50px;
+    margin-bottom:10px;
+    text-align: center;
+    width: 100%;
+    color: #313131;
+    font-family: "robotoLight";
+  }
+
+  .full-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+  }
+
+  .main-container{
+    max-width: 1350px;
+    width:100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-primary{
+    background-color: #313131;
+    border-color: #313131;
+    font-family: "robotoRegular";
+    border-radius: 7px;
+    font-weight:bold;
+  }
+
+  .btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+    background-color: black;
+    border-color: black;
+  }
+
+  .btn-secondary{
+    background-color: #313131;
+    border-color:#313131;
+    font-family: "robotoRegular";
+    border-radius: 7px;
+    font-weight:bold;
+  }
+
+  .btn-secondary:hover{
+    background-color: #1b1b1b;
+    border-color: #1b1b1b;
+  }
+  .table-map{
+    background-color: #313131;
+    color: white;
+    font-family: "robotoLight";
+  }
+
+  .table-map_content{
+    font-family: "robotoRegular";
+    background-color: white;
+  }
+
+  
+
+/* GENERAL ELEMENTS - END */
+
+
+/* SWEET ALERT 2 - START */
+
+  .swal2-popup {
+    border-radius: 8px !important;
+  }
+
+  .swal2-styled.swal2-confirm {
+    background-color: #313131 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-family: robotoBold !important;
+    font-size: 14px !important;
+  }
+
+  .swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+    background-color: #313131 !important;
+  }
+
+  .swal2-styled:focus {
+    outline: 0;
+  }
+
+  .swal2-close:focus, .swal2-close:hover {
+    color: #313131 !important;
+  }
+
+  .swal2-title {
+    color: #313131 !important;
+    font-family: robotoBold !important;
+    font-size: 1.2rem !important;
+    justify-content: center!important;
+  }
+
+  .swal2-content {
+    color: #707070 !important;
+    font-size: 1rem !important;
+    font-family: robotoMedium !important;
+  }
+
+  .swal2-loader {
+    border-color: #313131  transparent #313131 transparent !important;
+  }
+
+  .swal2-timer-progress-bar {
+    background: #313131 !important;
+  }
+
+/* SWEET ALERT 2 - END */ 

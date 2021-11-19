@@ -1,0 +1,110 @@
+<style>
+    .search-container{
+        display: flex;
+        justify-content:center;
+    }
+    .buscador {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+        box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+        border-radius: 15px 0 0 15px;
+    }
+
+    .buscador .form-control {
+        width: 370px;
+        font-family: robotoRegular !important;
+        color: #707070 !important;
+    }
+
+    .buscador .form-control:focus {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        font-family: robotoRegular !important;
+        color: #707070 !important;
+    }
+
+    .buscador .input-container {
+        _margin-right: 10px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        padding: 0 7px;
+        width: 270px;
+    }
+
+    .select-container {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        border-radius: 15px 0 0 15px;
+        padding: 0 7px;
+        height: 35px;
+    }
+
+    .buscador .input-container .lupa {
+        width: 20px;
+    }
+
+    .buscador .input-container .input-buscar {
+        background-color: none;
+        padding-left: 0px !important;
+        font-family: robotoRegular !important;
+        color: #707070 !important;
+    }
+
+    .btn-buscar {
+        background-color: #313131;
+        border-color: #313131;
+        font-family: robotoBold;
+        font-size: 14px;
+        border-radius: 0 15px 15px 0!important;
+        -webkit-box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+        box-shadow: 0px 8px 20px rgb(0 0 0 / 6%);
+    }
+
+    .btn-buscar:hover {
+        background-color: black;
+        border-color: black;
+    }
+    .btn-secondary-gt{
+        color: black !important;
+        background-color: white!important;
+        border-color: white!important;
+        border-radius: 7px 0 0 7px!important;
+        color: #707070 !important;
+    }
+</style>
+
+
+
+<!-- BUSCADOR DE CONTRATO - LINEA -->
+<div class="search-container">
+    <div class="buscador">
+        <div class="select-container"> 
+            <select ng-model = "vm.search.criterio_busqueda" class="btn-secondary-gt" id="country" name="country">
+                <option value="DNI" default>    DNI</option>
+                <option value="LINEA">  LINEA</option>
+            </select>
+        </div>
+    
+        <div class="input-container">
+            <img class="lupa" src="img/icons/buscar-hi.svg" alt="">
+            <input onKeyPress="return validar(event)" name = "buscar" ng-model = "vm.search.buscar" type="string" class="form-control" placeholder="{{vm.search.buscar}}" maxlength="{{vm.MAXIMO_INGRESOS_BUSCADOR}}" class="input-buscar" style="border: 1px solid white!important;">
+        </div>
+    </div>
+    
+    <!-- BOTON BUSCAR -->
+    <button ng-click = "vm.get_cliente_tecnologia();" type="submit" class="btn btn-primary btn-buscar">Buscar</button>
+</div>
