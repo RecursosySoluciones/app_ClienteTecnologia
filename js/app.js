@@ -27,7 +27,7 @@ app.controller("controlador", function($scope, $http){
 
     // OBTIENE LA FECHA DE LA ULTIMA ACTUALIZACION DE LA BDD
     vm.get_last_update_db = () => {
-        $http.get('../../dataProcess/db/json/db.json')
+        $http.get('../dataProcess/db/json/db.json')
         .then(function (response) {
             let $aux_date = response.data['CLIENTE_TECNOLOGIA']['LAST_UPDATE_HUMAN']
             vm.last_update_db = $aux_date.substr(0,10)
