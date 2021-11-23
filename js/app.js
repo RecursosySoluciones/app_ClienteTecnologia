@@ -7,7 +7,7 @@ app.controller("controlador", function($scope, $http){
     vm.inicializarVariables = ()  => {
 
         vm.last_update_db = ""
-        
+
         vm.MAXIMO_INGRESOS_BUSCADOR = 20
         vm.MINIMO_INGRESOS_BUSCADOR = 5
 
@@ -29,7 +29,8 @@ app.controller("controlador", function($scope, $http){
     vm.get_last_update_db = () => {
         $http.get('../../dataProcess/db/json/db.json')
         .then(function (response) {
-            vm.last_update_db= response.data['CLIENTE_TECNOLOGIA']['LAST_UPDATE_HUMAN']
+            let $aux_date = response.data['CLIENTE_TECNOLOGIA']['LAST_UPDATE_HUMAN']
+            vm.last_update_db = $aux_date.substr(0,10)
         })
     }
 
