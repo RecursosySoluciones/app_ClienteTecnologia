@@ -56,6 +56,11 @@
     font-family: "robotoMedium";
     font-size: 25px;  
   }
+  .last_update_db{
+    padding: 0 20px;
+    color: white;
+    cursor: pointer;
+  }
 
 
 
@@ -90,12 +95,8 @@
       Cliente / Tecnología
     </div>
   </a>
-
-  <div style="display: flex; align-items: center;">
-
-  </div>
-  <div class="hamburger-container" onclick="openNav()">
-    <img src="img/icons/bars.svg" width="20px" alt="">
+  <div class="last_update_db" data-bs-toggle="tooltip" data-bs-placement="left">
+    <span data-tootik="Última Actualización: {{vm.last_update_db}}" data-tootik-conf="left invert shadow"><img src="img/icons/last_update-white.png" alt="" width="30px"></span>
   </div>
   
 </div>

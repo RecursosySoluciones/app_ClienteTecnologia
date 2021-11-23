@@ -5,6 +5,8 @@ app.controller("controlador", function($scope, $http){
 
     /* INICIALIZA LAS VARIABLES DEL PROYECTO */
     vm.inicializarVariables = ()  => {
+
+        vm.last_update_db = ""
         
         vm.MAXIMO_INGRESOS_BUSCADOR = 20
         vm.MINIMO_INGRESOS_BUSCADOR = 5
@@ -19,9 +21,17 @@ app.controller("controlador", function($scope, $http){
             status:             "no_iniciada",
             resultado:          ""
         }
+        vm.get_last_update_db()
         
     }
 
+    // OBTIENE LA FECHA DE LA ULTIMA ACTUALIZACION DE LA BDD
+    vm.get_last_update_db = () => {
+        $http.get('../../dataProcess/db/json/db.json')
+        .then(function (response) {
+            vm.last_update_db= response.data['CLIENTE_TECNOLOGIA']['LAST_UPDATE_HUMAN']
+        })
+    }
 
     /* LEE EL JSON DE MENSAJES RECIBIDOS Y LO GUARDA EN UN ARRAY*/
     vm.get_cliente_tecnologia = ($status) => {
