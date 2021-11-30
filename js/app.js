@@ -23,10 +23,11 @@ app.controller("controlador", function($scope, $http){
             resultado:          ""
         }
 
-        vm.visible_screen = "Initial"
-        vm.class_search = "search-initial_container"
+        vm.visible_screen       = "Initial"
+        vm.class_search         = "search-initial_container"
+        vm.class_home_container = "home-ftth_container"
+        vm.last_update_db       = ""
 
-        vm.last_update_db = ""
         vm.get_last_update_db()
         
     }
@@ -87,6 +88,7 @@ app.controller("controlador", function($scope, $http){
                             vm.search.titulo_resultado  = vm.search.criterio_busqueda + " " + vm.search.buscar
                             vm.visible_screen           = 'Home'
                             vm.class_search             = 'search-home_container'
+                            vm.class_home_container     = vm.search.resultado.CLASE_SERVICIO == 'Ont Ftth'? "home-ftth_container" : "home-hfc_container"
                             vm.search.status            = "registro_encontrado"
 
                         }

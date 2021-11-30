@@ -1,5 +1,5 @@
 <style>
-    .home-container{
+    .home-ftth_container{
         background-image: url(img/backgrounds/home.svg);
         background-size: cover;
         background-color: #250859;
@@ -9,8 +9,19 @@
         justify-content: center;
         align-items: center;
     }
+
+    .home-hfc_container{
+        background-image: url(img/backgrounds/home.svg);
+        background-size: cover;
+        background-color: #6A2FD3;
+        width: 100%;
+        height: calc(100vh - 40px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 
-<div class="home-container">
+<div ng-class="vm.class_home_container">
     <div ng-include = "'include/partials/home-result.html'"></div>
 </div>
