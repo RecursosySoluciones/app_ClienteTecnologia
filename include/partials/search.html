@@ -1,8 +1,8 @@
 <!-- BUSCADOR DE CONTRATO - LINEA -->
-<div class="search-container">
+<div ng-class="vm.class_search">
     <div class="buscador">
         <div class="select-container"> 
-            <select ng-model = "vm.search.criterio_busqueda" ng-click="vm.set_search_placeholder()" class="btn-secondary-gt" id="country" name="country">
+            <select ng-model = "vm.search.criterio_busqueda" class="btn-secondary-gt" id="country" name="country">
                 <option value="DNI" default>DNI</option>
                 <option value="LINEA">Línea</option>
             </select>

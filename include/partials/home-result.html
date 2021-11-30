@@ -14,8 +14,8 @@
     }
 
     .result-container .left-container{
-        width: 30%;
-        padding: 40px;
+        _width: 30%;
+        padding: 40px 60px 40px 0;
     }
     .result-container .left-container h2{
         color: #00CEF5;
@@ -95,12 +95,12 @@
 <div  ng-if="vm.search.status != 'no_iniciada'" class="result-container">
     <div class="left-container">
         <div ng-if="vm.search.resultado.CLASE_SERVICIO == 'Ont Ftth'">
-            <img src="img/illustrations/mdm-ftth.svg" alt="" width="95%">
+            <img src="img/illustrations/mdm-ftth.svg" alt="" width="95%" style="min-width: 282.16px;">
             <h2>TECNOLOGÍA FTTH</h2>
         </div>
         <div ng-if="vm.search.resultado.CLASE_SERVICIO == 'HFC'">
             <h2>TECNOLOGÍA HFC</h2>
-            <img src="img/illustrations/mdm-hfc.svg" alt="" width="95%">
+            <img src="img/illustrations/mdm-hfc.svg" alt="" width="95%" style="min-width: 282.16px;">
             
         </div>
         

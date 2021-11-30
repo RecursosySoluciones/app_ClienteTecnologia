@@ -299,7 +299,7 @@
 
 /* BARRA DE BUSQUEDA - START */
 
-.search-container{
+.search-initial_container{
   display: flex;
   justify-content:center;
   background-color:#66528a;
@@ -310,10 +310,14 @@
 }
 
 /* ESTE ESTILO PISA ALGUNAS DE LA BARRA DE BUSQUEDA CUANDO ESTA INSERTADA EN EL NAVBAR */
-.home-style{
-  background-color: #040506!important;
-  padding: 0!important;
-  margin-top: 0!important;
+.search-home_container{
+  display: flex;
+  justify-content:center;
+  border-radius: 10px;
+  font-family: 'robotoRegular';
+  background-color: #040506;
+  padding: 0;
+  margin-top: 0;
 }
 
 .buscador {
