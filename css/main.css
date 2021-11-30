@@ -416,7 +416,7 @@
 
 /* INITIAL PAGE - START */
   .initial-container{
-    background-image: url(img/backgrounds/home.svg);
+    background-image: url(../img/backgrounds/home.svg);
     background-size: cover;
     background-color: #250859;
     width: 100%;
@@ -474,7 +474,7 @@
 
 /* HOME PAGE - START */
   .home-ftth_container{
-    background-image: url(img/backgrounds/home.svg);
+    background-image: url(../img/backgrounds/home.svg);
     background-size: cover;
     background-color: #250859;
     width: 100%;
@@ -485,7 +485,7 @@
   }
 
   .home-hfc_container{
-    background-image: url(img/backgrounds/home.svg);
+    background-image: url(../img/backgrounds/home.svg);
     background-size: cover;
     background-color: #6A2FD3;
     width: 100%;
