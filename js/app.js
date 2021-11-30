@@ -6,13 +6,13 @@ app.controller("controlador", function($scope, $http){
     /* INICIALIZA LAS VARIABLES DEL PROYECTO */
     vm.inicializarVariables = ()  => {
 
-        vm.last_update_db = ""
+        
 
         vm.MAXIMO_INGRESOS_BUSCADOR = 20
         vm.MINIMO_INGRESOS_BUSCADOR = 5
 
         vm.MSJ_NO_RESULT = "Colocar texto indicando como proceder en caso de no tener un status de busqueda."
-
+        vm.search_placeholder = "Ingresá el nro de DNI"
         vm.msjError = ""
 
         vm.search = {
@@ -21,6 +21,10 @@ app.controller("controlador", function($scope, $http){
             status:             "no_iniciada",
             resultado:          ""
         }
+
+        vm.visible_screen = "Main"
+
+        vm.last_update_db = ""
         vm.get_last_update_db()
         
     }

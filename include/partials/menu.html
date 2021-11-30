@@ -1,17 +1,14 @@
 <style>
   .main-menu{
-    background-color: grey;
-    height:59px;
+    background-color: #040506;
+    height:60px;
     display: flex;
     justify-content:space-between;
-    align-items: center;
-    border: 1px solid grey;
-    -webkit-box-shadow: 0px 10px 26px -7px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 10px 26px -7px rgba(0,0,0,0.5);
-    box-shadow: 0px 10px 26px -7px rgba(0,0,0,0.5);
+    align-items: center;    
     position: fixed;
     width: 100%;
     z-index: 1000;
+    box-shadow: 0px 3px 6px #00000029;
   }
 
   .main-menu .links{
@@ -44,22 +41,23 @@
   }
 
   .brand-container{
-    background-color:#313131;
-    _background-color:#437c98;
-    height: 59px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 33px;
     color: white;
     border-radius: 0 0 17px 0;
-    font-family: "robotoMedium";
-    font-size: 25px;  
+    font-family: "robotoBold";
+    font-size: 1.125rem;  
   }
   .last_update_db{
     padding: 0 20px;
     color: white;
     cursor: pointer;
+    font-family: 'robotoRegular';
+    font-size: 0.75rem;
+
   }
 
 
@@ -92,11 +90,17 @@
 <div class="main-menu">
   <a href="#" style="text-decoration: none; cursor: pointer">
     <div class="brand-container">
-      Cliente / Tecnología
+      APP CLIENTE - TECNOLOGÍA
     </div>
   </a>
+
+  <div class="menu-search-container" ng-include = "'include/partials/home-search.html'"></div>
+
   <div class="last_update_db" data-bs-toggle="tooltip" data-bs-placement="left">
-    <span data-tootik="Última Actualización: {{vm.last_update_db}}" data-tootik-conf="left invert shadow"><img src="img/icons/last_update-white.png" alt="" width="30px"></span>
+    <span data-tootik="Última Actualización: {{vm.last_update_db}}" data-tootik-conf="left invert shadow">
+      <img src="img/icons/last_update-white.svg" alt="" width="15px" style="margin-right: 5px; margin-bottom: 3px">
+      <span>ÚLTIMA ACTUALIZACIÓN</span>
+    </span>
   </div>
   
 </div>

@@ -1,0 +1,25 @@
+<style>
+    
+</style>
+
+
+
+<!-- BUSCADOR DE CONTRATO - LINEA -->
+<div class="search-container home-style">
+    <div class="buscador">
+        <div class="select-container"> 
+            <select ng-model = "vm.search.criterio_busqueda" class="btn-secondary-gt" id="country" name="country">
+                <option value="DNI" default>DNI</option>
+                <option value="LINEA">Línea</option>
+            </select>
+        </div>
+    
+        <div class="input-container">
+            <!-- <img class="lupa" src="img/icons/buscar-hi.svg" alt=""> -->
+            <input onKeyPress="return validar(event)" name = "buscar" ng-model = "vm.search.buscar" type="string" class="form-control" placeholder="{{vm.search_placeholder}}" maxlength="{{vm.MAXIMO_INGRESOS_BUSCADOR}}" class="input-buscar" style="border: 1px solid white!important;">
+        </div>
+    </div>
+    
+    <!-- BOTON BUSCAR -->
+    <button ng-click = "vm.get_cliente_tecnologia();" type="submit" class="btn btn-primary btn-buscar">BUSCAR</button>
+</div>

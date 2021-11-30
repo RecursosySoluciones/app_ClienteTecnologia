@@ -1,4 +1,15 @@
 /* FONTS - START */
+
+  @font-face {
+    font-family: "bebasNeueRegular";
+    src: url("fonts/BebasNeue-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "pulsoRegular";
+    src: url("fonts/Pulso-Regular.ttf");
+  }
+
   @font-face {
     font-family: "robotoBlack";
     src: url("fonts/Roboto-Black.ttf");
@@ -173,16 +184,13 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 60px;
+    _padding-top: 60px;
   }
 
   .main-container{
-    max-width: 1350px;
+    _max-width: 1350px;
     width:100%;
-    height: calc(100vh - 60px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: calc(100vh - 40px);
   }
 
   .btn-primary{
@@ -274,3 +282,114 @@
   }
 
 /* SWEET ALERT 2 - END */ 
+
+/* BARRA DE BUSQUEDA - START */
+
+.search-container{
+  display: flex;
+  justify-content:center;
+  background-color:#66528a;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: 'robotoRegular';
+  margin-top: 20px;
+}
+
+/* ESTE ESTILO PISA ALGUNAS DE LA BARRA DE BUSQUEDA CUANDO ESTA INSERTADA EN EL NAVBAR */
+.home-style{
+  background-color: #040506!important;
+  padding: 0!important;
+  margin-top: 0!important;
+}
+
+.buscador {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border-radius: 5px;
+  width: 255px;
+}
+
+.buscador .form-control {
+  _width: 370px;
+  font-family: 'robotoRegular' !important;
+  color: #848484 !important;
+  padding: .375rem 0;
+  font-size: 1rem;
+}
+
+.buscador .form-control:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  font-family: 'robotoRegular' !important;
+  color: #848484 !important;
+}
+
+.buscador .input-container {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  padding: 0;
+  width: 100%;
+  border-radius:  0 5px 5px 0;
+}
+
+.select-container {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 5px 0 0 5px;
+  padding: 0 7px;
+  height: 36px;
+}
+
+.buscador .input-container .lupa {
+  width: 20px;
+}
+
+.buscador .input-container .input-buscar {
+  background-color: none;
+  padding-left: 0px !important;
+  font-family: 'robotoRegular' !important;
+  color: #848484 !important;
+}
+
+.btn-buscar {
+  background-color: #00CEF5;
+  border-color: #00CEF5;
+  font-family: 'robotoMedium';
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0 40px;
+  letter-spacing: 0px;
+  margin-left: 15px;
+}
+
+.btn-buscar:hover, .btn-buscar:active, .btn-buscar:focus {
+  background-color: #00a9ca;
+  border-color: #00a9ca;
+}
+
+.btn-secondary-gt{
+  background-color: white!important;
+  border-color: white!important;
+  border-radius: 7px 0 0 7px!important;
+  font-family: 'robotoMedium';
+  color: #250859 !important;
+  font-size: 1rem;
+}
+.btn-secondary-gt:focus-visible{
+  border-color: black!important;
+}
+
+@media only screen and (max-width: 768px) {
+  .select-container{
+      height:35px;
+  }
+  .btn-buscar{
+      padding: 0 10px;
+  }
+}
+
+/* BARRA DE BUSQUEDA - END */
