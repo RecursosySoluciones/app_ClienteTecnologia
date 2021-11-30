@@ -6,15 +6,16 @@ app.controller("controlador", function($scope, $http){
     /* INICIALIZA LAS VARIABLES DEL PROYECTO */
     vm.inicializarVariables = ()  => {
 
-        
-
+        /* VARIABLES ESTATICAS
+           ------------------- */
         vm.MAXIMO_INGRESOS_BUSCADOR = 20
         vm.MINIMO_INGRESOS_BUSCADOR = 5
-
         vm.MSJ_NO_RESULT = "Colocar texto indicando como proceder en caso de no tener un status de busqueda."
-        vm.search_placeholder = "Ingresá el nro de DNI"
-        vm.msjError = ""
+        
+        vm.search_placeholder = "Ingresá el nro de DNI" // PLACE HOLDER DEL CAMPO INPUT, VARIA EL TEXTO SEGUN EL FILTRO SELECCIONADO DNI/LINEA
+        vm.msjError = "" // SIRVE PARA MANEJAR LOS MSJ DE ERROR CON SWEET ALERT
 
+        // GUARDA TODA LA INFO DE LA BUSQUEDA REALIZADA
         vm.search = {
             criterio_busqueda:  "DNI",
             buscar:             "",
@@ -23,15 +24,16 @@ app.controller("controlador", function($scope, $http){
             resultado:          ""
         }
 
-        vm.visible_screen       = "Initial"
-        vm.class_search         = "search-initial_container"
-        vm.class_home_container = "home-ftth_container"
-        vm.last_update_db       = ""
+        vm.visible_screen       = "Initial" // INDICA QUE PANTALLA SE ENCUENTRA VISIBLE "INITIAL" (PANTALLA INICIAL DE LA APP) O "HOME" (PANTALLA QUE MUESTRA LOS RESULTADOS DE BUSQUEDA)
+        vm.class_search         = "search-initial_container" // ESTILO QUE UTILIZARA EL CAMPO DE BUSQUEDA
+        vm.class_home_container = "home-ftth_container" // FONDO DE LA PANTALLA HOME.PAGE CAMBIA EL COLOR SEGUN LA TECNOLOGIA CONSULTADA FTTH/ HFC
+        vm.last_update_db       = "" // SE GUARDA LA INFO DE CUANDO FUE LA ULTIMA VEZ QUE SE ACTUALIZO LA BASE
 
         vm.get_last_update_db()
         
     }
 
+    // EN CASO DE ESTAR EN EL INPUT DEL FORMULARIO DE BUSQUEDA Y PRESIONAR ENTER SE EJECUTA LA FUNCION
     vm.press_enter = (keyEvent) => {
 
         if (keyEvent.which === 13) {
