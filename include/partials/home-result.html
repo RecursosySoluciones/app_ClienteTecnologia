@@ -57,16 +57,17 @@
     .result-container .right-container .info-container .data-container{
         display: flex;
         width: 100%;
+        align-items: flex-start;
     }
 
     .result-container .right-container .info-container .data-container .left-container, .result-container .right-container .info-container .data-container .right-container{
         width: 50%;
         flex-direction: column;
+        padding: 40px 40px 10px 40px;
     }
 
     .result-container .right-container .info-container .data-container .left-container .item-container, .result-container .right-container .info-container .data-container .right-container .item-container{
         display: flex;
-        _width: 300px;
         margin-bottom: 7px;
     }
 
@@ -87,23 +88,29 @@
         font-size: 1.125rem;
         padding: 0;
         margin: 0;
-        min-width: 300px;
+        width: 222px;
     }
 </style>
 
-<div class="result-container">
+<div  ng-if="vm.search.status == 'registro_encontrado'" class="result-container">
     <div class="left-container">
-        <div>
+        <div ng-if="vm.search.resultado.CLASE_SERVICIO == 'Ont Ftth'">
             <img src="img/illustrations/mdm-ftth.svg" alt="" width="95%">
             <h2>TECNOLOGÍA FTTHH</h2>
         </div>
+        <div ng-if="vm.search.resultado.CLASE_SERVICIO == 'HFC'">
+            <h2>TECNOLOGÍA HFC</h2>
+            <img src="img/illustrations/mdm-hfc.svg" alt="" width="95%">
+            
+        </div>
+        
     </div>
 
     <div class="right-container">
         <div class="info-container">
             <div class="info-sub_container">
                 <div class='title-container'>
-                    Resultados 
+                    Resultados {{vm.search.titulo_resultado}}
                 </div>
                 <div class="data-container">
                     <div class="left-container">
@@ -115,7 +122,7 @@
                             </div>
                             <div>
                                 <p class="item-title">Nombre</p>
-                                <p class="item-text">Olga Raquel Rojas</p>
+                                <p class="item-text">{{vm.search.resultado.NOMBRE_CLIENTE}} {{vm.search.resultado.APELLIDO_CLIENTE}}</p>
                             </div>
                         </div>
 
@@ -126,7 +133,7 @@
                             </div>
                             <div>
                                 <p class="item-title">DNI</p>
-                                <p class="item-text">10186825</p>
+                                <p class="item-text">{{vm.search.resultado.NUMERO_IDENTIFICACION}}</p>
                             </div>
                         </div>
 
@@ -137,7 +144,7 @@
                             </div>
                             <div>
                                 <p class="item-title">Dirección</p>
-                                <p class="item-text">Yabel Jose 1095 - Salta Jujuy</p>
+                                <p class="item-text">{{vm.search.resultado.DIRECCION_COMPLETA}} - {{vm.search.resultado.SUB_REGION}}</p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +157,7 @@
                             </div>
                             <div>
                                 <p class="item-title">Modelo</p>
-                                <p class="item-text">Olga Raquel Rojas</p>
+                                <p class="item-text">{{vm.search.resultado.MODELO}}</p>
                             </div>
                         </div>
 
@@ -161,7 +168,7 @@
                             </div>
                             <div>
                                 <p class="item-title">Velocidad</p>
-                                <p class="item-text">10186825</p>
+                                <p class="item-text">{{vm.search.resultado.VELOCIDAD}}</p>
                             </div>
                         </div>
 
@@ -172,7 +179,7 @@
                             </div>
                             <div>
                                 <p class="item-title">ID Suscripción</p>
-                                <p class="item-text">Yabel Jose 1095 - Salta Jujuy</p>
+                                <p class="item-text">{{vm.search.resultado.ID_SUSCRIPCION}}</p>
                             </div>
                         </div>
 

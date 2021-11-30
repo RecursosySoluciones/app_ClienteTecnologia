@@ -19,6 +19,7 @@ app.controller("controlador", function($scope, $http){
             criterio_busqueda:  "DNI",
             buscar:             "",
             status:             "no_iniciada",
+            titulo_resultado:    "",
             resultado:          ""
         }
 
@@ -67,8 +68,9 @@ app.controller("controlador", function($scope, $http){
 
                         } else {
 
-                            vm.search.resultado = $aux_result.data
-                            vm.search.status    = "registro_encontrado"
+                            vm.search.resultado         = $aux_result.data
+                            vm.search.titulo_resultado  = vm.search.criterio_busqueda + " " + vm.search.buscar
+                            vm.search.status            = "registro_encontrado"
 
                         }
                         break;
