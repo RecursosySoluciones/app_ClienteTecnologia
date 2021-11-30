@@ -2,7 +2,7 @@
 <div class="search-container">
     <div class="buscador">
         <div class="select-container"> 
-            <select ng-model = "vm.search.criterio_busqueda" class="btn-secondary-gt" id="country" name="country">
+            <select ng-model = "vm.search.criterio_busqueda" ng-click="vm.set_search_placeholder()" class="btn-secondary-gt" id="country" name="country">
                 <option value="DNI" default>DNI</option>
                 <option value="LINEA">Línea</option>
             </select>
@@ -10,7 +10,7 @@
     
         <div class="input-container">
             <!-- <img class="lupa" src="img/icons/buscar-hi.svg" alt=""> -->
-            <input onKeyPress="return validar(event)" name = "buscar" ng-model = "vm.search.buscar" type="string" class="form-control" placeholder="{{vm.search_placeholder}}" maxlength="{{vm.MAXIMO_INGRESOS_BUSCADOR}}" class="input-buscar" style="border: 1px solid white!important;">
+            <input ng-keypress= "vm.press_enter($event)" onKeyPress="return validar(event)" name = "buscar" ng-model = "vm.search.buscar" type="string" class="form-control" placeholder="{{vm.search_placeholder}}" maxlength="{{vm.MAXIMO_INGRESOS_BUSCADOR}}" class="input-buscar" style="border: 1px solid white!important;">
         </div>
     </div>
     

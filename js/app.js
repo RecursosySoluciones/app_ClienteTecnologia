@@ -30,6 +30,20 @@ app.controller("controlador", function($scope, $http){
         
     }
 
+    vm.press_enter = (keyEvent) => {
+
+        if (keyEvent.which === 13) {
+            vm.get_cliente_tecnologia()
+        }
+    }
+
+    // SETEA EL TEXTO DEL PLACE HOLDER DEL CAMPO DE BUSQUEDA
+    vm.set_search_placeholder = () => {
+
+        vm.search_placeholder = vm.search.criterio_busqueda == 'DNI' ? "Ingresá el nro de DNI" : "Ingresá el nro de Línea"
+
+    }
+
     // OBTIENE LA FECHA DE LA ULTIMA ACTUALIZACION DE LA BDD
     vm.get_last_update_db = () => {
         $http.get('../dataProcess/db/json/db.json')
