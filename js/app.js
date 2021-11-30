@@ -23,7 +23,7 @@ app.controller("controlador", function($scope, $http){
             resultado:          ""
         }
 
-        vm.visible_screen = "Main"
+        vm.visible_screen = "Initial"
 
         vm.last_update_db = ""
         vm.get_last_update_db()
@@ -70,6 +70,7 @@ app.controller("controlador", function($scope, $http){
 
                             vm.search.resultado         = $aux_result.data
                             vm.search.titulo_resultado  = vm.search.criterio_busqueda + " " + vm.search.buscar
+                            vm.visible_screen           = 'Home'
                             vm.search.status            = "registro_encontrado"
 
                         }

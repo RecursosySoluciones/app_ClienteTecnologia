@@ -92,11 +92,11 @@
     }
 </style>
 
-<div  ng-if="vm.search.status == 'registro_encontrado'" class="result-container">
+<div  ng-if="vm.search.status != 'no_iniciada'" class="result-container">
     <div class="left-container">
         <div ng-if="vm.search.resultado.CLASE_SERVICIO == 'Ont Ftth'">
             <img src="img/illustrations/mdm-ftth.svg" alt="" width="95%">
-            <h2>TECNOLOGÍA FTTHH</h2>
+            <h2>TECNOLOGÍA FTTH</h2>
         </div>
         <div ng-if="vm.search.resultado.CLASE_SERVICIO == 'HFC'">
             <h2>TECNOLOGÍA HFC</h2>
