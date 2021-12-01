@@ -10,7 +10,7 @@ app.controller("controlador", function($scope, $http){
            ------------------- */
         vm.MAXIMO_INGRESOS_BUSCADOR = 20
         vm.MINIMO_INGRESOS_BUSCADOR = 5
-        vm.MSJ_NO_RESULT = "No encontramos el cliente que estas buscando, recordá que podes buscarlo con el DNI o con el TELEFONO"
+        vm.MSJ_NO_RESULT = "Recordá que podes buscarlo con el DNI o con el TELEFONO."
         
         vm.search_placeholder = "Ingresá el nro de DNI" // PLACE HOLDER DEL CAMPO INPUT, VARIA EL TEXTO SEGUN EL FILTRO SELECCIONADO DNI/LINEA
         vm.msjError = "" // SIRVE PARA MANEJAR LOS MSJ DE ERROR CON SWEET ALERT
@@ -26,7 +26,7 @@ app.controller("controlador", function($scope, $http){
 
         vm.visible_screen       = "Initial" // INDICA QUE PANTALLA SE ENCUENTRA VISIBLE "INITIAL" (PANTALLA INICIAL DE LA APP) O "HOME" (PANTALLA QUE MUESTRA LOS RESULTADOS DE BUSQUEDA)
         vm.class_search         = "search-initial_container" // ESTILO QUE UTILIZARA EL CAMPO DE BUSQUEDA
-        vm.class_home_container = "home-ftth_container" // FONDO DE LA PANTALLA HOME.PAGE CAMBIA EL COLOR SEGUN LA TECNOLOGIA CONSULTADA FTTH/ HFC
+        vm.class_home_container = "home-ftth_container-color" // FONDO DE LA PANTALLA HOME.PAGE CAMBIA EL COLOR SEGUN LA TECNOLOGIA CONSULTADA FTTH/ HFC
         vm.last_update_db       = "" // SE GUARDA LA INFO DE CUANDO FUE LA ULTIMA VEZ QUE SE ACTUALIZO LA BASE
 
         vm.get_last_update_db()
@@ -90,7 +90,7 @@ app.controller("controlador", function($scope, $http){
                             vm.search.titulo_resultado  = vm.search.criterio_busqueda + " " + vm.search.buscar
                             vm.visible_screen           = 'Home'
                             vm.class_search             = 'search-home_container'
-                            vm.class_home_container     = vm.search.resultado.CLASE_SERVICIO == 'Ont Ftth'? "home-ftth_container" : "home-hfc_container"
+                            vm.class_home_container     = vm.search.resultado.CLASE_SERVICIO == 'Ont Ftth'? "home-ftth_container-color" : "home-hfc_container-color"
                             vm.search.status            = "registro_encontrado"
 
                         }
@@ -130,7 +130,7 @@ app.controller("controlador", function($scope, $http){
 
             case "sin_resultado":
                 $msj_icon = 'info'
-                $msj_title= 'CLIENTE NO ENCONTRADO',
+                $msj_title= 'No encontramos el cliente',
                 $msj_text = vm.MSJ_NO_RESULT
                 break;
             
