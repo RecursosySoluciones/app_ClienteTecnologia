@@ -10,7 +10,7 @@ app.controller("controlador", function($scope, $http){
            ------------------- */
         vm.MAXIMO_INGRESOS_BUSCADOR = 20
         vm.MINIMO_INGRESOS_BUSCADOR = 5
-        vm.MSJ_NO_RESULT = "Colocar texto indicando como proceder en caso de no tener un status de busqueda."
+        vm.MSJ_NO_RESULT = "No encontramos el cliente que estas buscando, recordá que podes buscarlo con el DNI o con el TELEFONO"
         
         vm.search_placeholder = "Ingresá el nro de DNI" // PLACE HOLDER DEL CAMPO INPUT, VARIA EL TEXTO SEGUN EL FILTRO SELECCIONADO DNI/LINEA
         vm.msjError = "" // SIRVE PARA MANEJAR LOS MSJ DE ERROR CON SWEET ALERT
@@ -21,7 +21,7 @@ app.controller("controlador", function($scope, $http){
             buscar:             "",
             status:             "no_iniciada",
             titulo_resultado:    "",
-            resultado:          ""
+            resultado:          ""  
         }
 
         vm.visible_screen       = "Initial" // INDICA QUE PANTALLA SE ENCUENTRA VISIBLE "INITIAL" (PANTALLA INICIAL DE LA APP) O "HOME" (PANTALLA QUE MUESTRA LOS RESULTADOS DE BUSQUEDA)
@@ -130,7 +130,7 @@ app.controller("controlador", function($scope, $http){
 
             case "sin_resultado":
                 $msj_icon = 'info'
-                $msj_title= 'Sin resultados',
+                $msj_title= 'CLIENTE NO ENCONTRADO',
                 $msj_text = vm.MSJ_NO_RESULT
                 break;
             

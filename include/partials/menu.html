@@ -4,14 +4,17 @@
     <div class="brand-container">
       APP CLIENTE - TECNOLOGÍA
     </div>
+    <div class="brand-container-mobile">
+      <img src="img/icons/app.png" alt="" width="35px">
+    </div>
   </a>
 
   <div class="menu-search-container" ng-include = "'include/partials/search.html'"></div>
 
   <div class="last_update_db" data-bs-toggle="tooltip" data-bs-placement="left">
     <span data-tootik="Última Actualización: {{vm.last_update_db}}" data-tootik-conf="left invert shadow">
-      <img src="img/icons/last_update-white.svg" alt="" width="15px" style="margin-right: 5px; margin-bottom: 3px">
-      <span>ÚLTIMA ACTUALIZACIÓN</span>
+      <img id="img-ultima_actualizacion" src="img/icons/last_update-white.svg" alt="" width="15px" style="margin-right: 5px; margin-bottom: 3px">
+      <span id="text-ultima_actualizacion">ÚLTIMA ACTUALIZACIÓN</span>
     </span>
   </div>
   

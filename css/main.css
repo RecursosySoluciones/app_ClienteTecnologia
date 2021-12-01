@@ -159,8 +159,10 @@
 
   body {
     color: #707070;
-    background-color: #F5F5F5;
+    background-color: #250859;
     position: relative;
+    background-image: url(../img/backgrounds/home.svg);
+    background-size: cover;
   }
 
   h2{
@@ -181,10 +183,10 @@
   }
 
   .full-container{
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
-    _padding-top: 60px;
+    overflow: auto;
   }
 
   .main-container{
@@ -410,15 +412,18 @@
     .btn-buscar{
         padding: 0 10px;
     }
+    .buscador {
+      width: 230px;
+    }
   }
 
 /* BARRA DE BUSQUEDA - END */
 
 /* INITIAL PAGE - START */
   .initial-container{
-    background-image: url(../img/backgrounds/home.svg);
+    _background-image: url(../img/backgrounds/home.svg);
     background-size: cover;
-    background-color: #250859;
+    _background-color: #250859;
     width: 100%;
     height: calc(100vh - 40px);
     display: flex;
@@ -473,10 +478,17 @@
 /* INITIAL PAGE - END */
 
 /* HOME PAGE - START */
-  .home-ftth_container{
-    background-image: url(../img/backgrounds/home.svg);
-    background-size: cover;
+  .home-ftth_container-color{
     background-color: #250859;
+  }
+  .home-hfc_container-color{
+    background-color: #6A2FD3;
+  }
+
+  .home-ftth_container{
+    _background-image: url(../img/backgrounds/home.svg);
+    background-size: cover;
+    _background-color: #250859;
     width: 100%;
     height: calc(100vh - 40px);
     display: flex;
@@ -485,14 +497,15 @@
   }
 
   .home-hfc_container{
-    background-image: url(../img/backgrounds/home.svg);
+    _background-image: url(../img/backgrounds/home.svg);
     background-size: cover;
-    background-color: #6A2FD3;
+    _background-color: #6A2FD3;
     width: 100%;
     height: calc(100vh - 40px);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 60px;
   }
 /* HOME PAGE - END */
 
@@ -550,6 +563,10 @@
     font-family: "robotoBold";
     font-size: 1.125rem;  
   }
+
+  .brand-container-mobile{
+    display: none;
+  }
   .last_update_db{
     padding: 0 20px;
     color: white;
@@ -558,7 +575,17 @@
     font-size: 0.75rem;
 
   }
-
+  @media only screen and (max-width: 1000px) {
+    #text-ultima_actualizacion{
+      display: none;
+    }
+    #img-ultima_actualizacion{
+      width: 35px;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  
+  }
   @media only screen and (max-width: 768px) {
     .hamburger-container{
       display: initial;
@@ -579,6 +606,33 @@
 
     .main-menu .links{
       display: none;
+    }
+
+    #text-ultima_actualizacion{
+      display: none;
+    }
+    .brand-container{
+      display: none;
+    }
+    .brand-container-mobile{
+      display: initial;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      _padding: 0 10px;
+      color: white;
+      border-radius: 0 0 17px 0;
+      font-family: "robotoBold";
+      font-size: 1.125rem; 
+    }
+
+    .last_update_db{
+      display: none;
+    }
+
+    .main-menu {
+      justify-content:space-around;
     }
 
   }
@@ -604,6 +658,12 @@
     _width: 30%;
     padding: 40px 60px 40px 0;
   }
+
+  .result-container .left-container .illustration{
+    width: 95%;
+    min-width: 282.16px;
+  }
+  
   .result-container .left-container h2{
     color: #00CEF5;
     font-size: 2.813rem;
@@ -677,5 +737,47 @@
     margin: 0;
     width: 222px;
   }
+  @media only screen and (max-width: 1200px) {
+
+    .data-container{
+      flex-direction: column;
+    }
+    .result-container .right-container .info-container .data-container .left-container, .result-container .right-container .info-container .data-container .right-container{
+      padding: 0 20px;
+    }
+    .result-container .right-container .info-container .title-container{
+      margin-bottom: 30px;
+    }
+    .result-container .right-container .info-container .data-container .left-container, .result-container .right-container .info-container .data-container .right-container{
+      width: 100%;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    
+    .result-container .left-container .illustration{
+      display: none;
+    }
+
+    .result-container .right-container{
+      padding: 0;
+      width: 100%;
+    }
+    
+    .result-container .left-container{
+      padding: 0;
+    }
+    
+    .result-container{
+      flex-direction: column;
+    }
+
+
+
+
+    .result-container .left-container h2{
+      margin-top: 20px;
+    }
+  }
+  
   
 /* HOME RESULT - END */
