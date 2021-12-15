@@ -28,11 +28,12 @@
 </head>
 
 <body ng-controller="controlador as vm" ng-class="vm.class_home_container">
-    <div ng-if="vm.visible_screen == 'Home'" ng-include = "'include/partials/menu.html'"></div>
+    <div ng-if="vm.visible_screen == 'Home'"    ng-include = "'include/partials/menu-home.html'"></div>
+    <div ng-if="vm.visible_screen == 'Initial'" ng-include = "'include/partials/menu-initial.html'"></div>
     <div class="full-container">
         <section class="main-container">
             <article ng-if="vm.visible_screen == 'Initial'" ng-include = "'include/initial_page.html'"></article>
-            <article ng-if="vm.visible_screen == 'Home'" ng-include = "'include/home_page.html'"></article>
+            <article ng-if="vm.visible_screen == 'Home'"    ng-include = "'include/home_page.html'"></article>
         </section>
     </div>
     <div ng-include = "'include/partials/footer.html'"></div>
