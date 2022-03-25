@@ -50,12 +50,25 @@ app.controller("controlador", function($scope, $http){
 
     // OBTIENE LA FECHA DE LA ULTIMA ACTUALIZACION DE LA BDD
     vm.get_last_update_db = () => {
-        $http.get('../dataProcess/db/json/db.json')
-        .then(function (response) {
-            let $aux_date = response.data['CLIENTE_TECNOLOGIA']['LAST_UPDATE_HUMAN']
-            vm.last_update_db = $aux_date.substr(0,10)
+        let $req = `../dataProcess/webservice/request/request_last_update.php`
+
+        $http.get($req, {
+            params: {
+                BASE: 'CLIENTE_TECNOLOGIA'
+            },
+            headers: {}
         })
+        .then(function (response) {
+            
+            let $aux_result = response.data['DATA']['DATE']
+            vm.last_update_db = $aux_result
+            
+        }, function (x) {
+            // Request error
+        }); 
     }
+
+      
 
     /* LEE EL JSON DE MENSAJES RECIBIDOS Y LO GUARDA EN UN ARRAY*/
     vm.get_cliente_tecnologia = ($status) => {
@@ -75,10 +88,11 @@ app.controller("controlador", function($scope, $http){
                 
                 let $aux_result = response.data
 
-                switch ($aux_result.status) {
+                switch ($aux_result['STATUS']) {
                     case 'SUCESS':
+                        
 
-                        if($aux_result.data == 'SIN_RESULTADOS'){
+                        if($aux_result['DATA'] == 'SIN_RESULTADOS'){
 
                             vm.search.status    = "sin_resultado"
                             vm.msjError         = "sin_resultado"
@@ -86,7 +100,7 @@ app.controller("controlador", function($scope, $http){
 
                         } else {
 
-                            vm.search.resultado         = $aux_result.data
+                            vm.search.resultado         = $aux_result.DATA
                             vm.search.titulo_resultado  = vm.search.criterio_busqueda + " " + vm.search.buscar
                             vm.visible_screen           = 'Home'
                             vm.class_search             = 'search-home_container'
@@ -114,7 +128,7 @@ app.controller("controlador", function($scope, $http){
                 // Request error
             });   
         } else {
-            vm.search.status = "campo_vacio"
+            vm.search.STATUS = "campo_vacio"
             vm.msjError = "campo_vacio"
             vm.mostrar_msjError()
         }
