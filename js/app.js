@@ -87,9 +87,8 @@ app.controller("controlador", function($scope, $http){
             .then(function (response) {
                 
                 let $aux_result = response.data
-
                 switch ($aux_result['STATUS']) {
-                    case 'SUCESS':
+                    case 'SUCCESS':
                         
 
                         if($aux_result['DATA'] == 'SIN_RESULTADOS'){
